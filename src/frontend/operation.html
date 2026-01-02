@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>V.A.L.O. — Operation</title>
+    <link rel="stylesheet" href="operation.css" />
+  </head>
+
+  <body>
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="topbar__inner">V.A.L.O.</div>
+    </header>
+
+    <main class="op-page">
+      <div class="op-shell">
+
+        <!-- Toolbar -->
+        <div class="toolbar">
+          <div class="toolbar-left">
+            <button class="icon-btn" id="undoBtn" title="Undo" aria-label="Undo">↩</button>
+            <button class="icon-btn" id="redoBtn" title="Redo" aria-label="Redo">↪</button>
+            <button class="ghost-btn" id="cancelBtn" type="button">Cancel</button>
+          </div>
+
+          <div class="toolbar-right">
+            <button class="primary-btn" id="doneBtn" type="button">Done</button>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <section class="op-layout">
+
+          <!-- Left panel -->
+          <aside class="panel">
+
+          <!-- Tabs row -->
+          <div class="tabs" role="tablist" aria-label="Tools">
+              <button class="tab is-active" type="button" data-tab="adjust" role="tab" aria-selected="true">Adjust</button>
+              <button class="tab" type="button" data-tab="filter" role="tab" aria-selected="false">Filter</button>
+              <button class="tab" type="button" data-tab="removebg" role="tab" aria-selected="false">Remove Background</button>
+              <button class="tab" type="button" data-tab="crop" role="tab" aria-selected="false">Crop</button>
+          </div>
+
+          <!-- ============ TAB PANELS ============ -->
+
+          <!-- Adjust Panel -->
+          <section class="tab-panel is-open" data-panel="adjust" role="tabpanel">
+              <details class="acc" open>
+              <summary class="acc-head">Brightness</summary>
+              <div class="acc-body">
+                  <input class="range" id="brightness" type="range" min="-100" max="100" value="0" />
+                  <div class="value-row">
+                  <span class="value-label">value</span>
+                  <input class="value-input" id="brightnessInput" type="number" min="-100" max="100" value="0" />
+                  <button class="reset-btn" id="brightnessReset" type="button" title="Reset Brightness">⟲</button>
+                  </div>
+              </div>
+              </details>
+
+              <details class="acc" open>
+              <summary class="acc-head">Sharpness</summary>
+              <div class="acc-body">
+                  <input class="range" id="sharpness" type="range" min="-100" max="100" value="0" />
+                  <div class="value-row">
+                  <span class="value-label">value</span>
+                  <input class="value-input" id="sharpnessInput" type="number" min="-100" max="100" value="0" />
+                  <button class="reset-btn" id="sharpnessReset" type="button" title="Reset Sharpness">⟲</button>
+                  </div>
+              </div>
+              </details>
+
+              <details class="acc">
+              <summary class="acc-head">Noise Reduction</summary>
+              <div class="acc-body">
+                  <input class="range" id="denoise" type="range" min="0" max="100" value="0" />
+                  <div class="value-row">
+                  <span class="value-label">value</span>
+                  <input class="value-input" id="denoiseInput" type="number" min="0" max="100" value="0" />
+                  <button class="reset-btn" id="denoiseReset" type="button" title="Reset Noise Reduction">⟲</button>
+                  </div>
+              </div>
+              </details>
+          </section>
+
+          <!-- Filter Panel (RGB like your screenshot example) -->
+          <section class="tab-panel" data-panel="filter" role="tabpanel">
+              <div class="simple-block">
+              <div class="block-title">Red</div>
+              <input class="range" id="red" type="range" min="-100" max="100" value="0" />
+              <div class="value-row">
+                  <span class="value-label">value</span>
+                  <input class="value-input" id="redInput" type="number" min="-100" max="100" value="0" />
+                  <button class="reset-btn" id="redReset" type="button" title="Reset Red">⟲</button>
+              </div>
+              </div>
+
+              <div class="simple-block">
+              <div class="block-title">Green</div>
+              <input class="range" id="green" type="range" min="-100" max="100" value="0" />
+              <div class="value-row">
+                  <span class="value-label">value</span>
+                  <input class="value-input" id="greenInput" type="number" min="-100" max="100" value="0" />
+                  <button class="reset-btn" id="greenReset" type="button" title="Reset Green">⟲</button>
+              </div>
+              </div>
+
+              <div class="simple-block">
+              <div class="block-title">Blue</div>
+              <input class="range" id="blue" type="range" min="-100" max="100" value="0" />
+              <div class="value-row">
+                  <span class="value-label">value</span>
+                  <input class="value-input" id="blueInput" type="number" min="-100" max="100" value="0" />
+                  <button class="reset-btn" id="blueReset" type="button" title="Reset Blue">⟲</button>
+                </div>
+              </div>
+          </section>
+
+          <!-- Remove Background Panel -->
+          <section class="tab-panel" data-panel="removebg" role="tabpanel">
+              <div class="remove-box">
+              <div class="remove-title">Removing...</div>
+              </div>
+          </section>
+
+          <!-- Crop Panel -->
+          <section class="tab-panel" data-panel="crop" role="tabpanel">
+              <div class="crop-grid">
+              <button class="crop-btn is-active" type="button">Original</button>
+              <button class="crop-btn" type="button">Custom</button>
+              <button class="crop-btn" type="button">Square</button>
+
+              <button class="crop-btn" type="button">9:16</button>
+              <button class="crop-btn" type="button">4:5</button>
+              <button class="crop-btn" type="button">5:7</button>
+
+              <button class="crop-btn" type="button">3:4</button>
+              <button class="crop-btn" type="button">3:5</button>
+              <button class="crop-btn" type="button">2:3</button>
+              </div>
+
+              <!-- Optional crop overlay corners (visual only) -->
+              <div class="crop-hint">Choose an aspect ratio to crop.</div>
+          </section>
+
+          </aside>
+
+
+          <!-- Right image stage -->
+          <section class="stage">
+            <div class="stage-frame">
+              <img id="mainImage" alt="Selected image" />
+            </div>
+          </section>
+
+        </section>
+      </div>
+    </main>
+
+    <div id="saveModal" class="modal hidden" aria-hidden="true">
+    <div class="modal__backdrop" data-close="true"></div>
+
+    <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="saveTitle">
+        <h2 id="saveTitle" class="modal__title">Save As</h2>
+
+        <label class="modal__label" for="fileLocation">File Location</label>
+        <input id="fileLocation" class="modal__input" type="text" placeholder="e.g. output/image_01.png" />
+
+        <div class="modal__actions">
+        <button id="saveBtn" class="modal__btn modal__btn--primary" type="button">Save</button>
+        <button id="closeSaveBtn" class="modal__btn modal__btn--ghost" type="button">Cancel</button>
+        </div>
+    </div>
+    </div>
+
+    <script src="operation.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
