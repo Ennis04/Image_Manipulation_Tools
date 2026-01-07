@@ -1,21 +1,62 @@
-Step to run the program
+# V.A.L.O. – Visual Adjustment Layer Operator
 
-1. cd to backend and run this line on command prompt <br>
+## 🚀 How to Run the Program
+
+Follow the steps below to run both the backend and frontend of the project.
+
+---
+
+## 🔧 Backend Setup (Python + FastAPI)
+
+1. Navigate to the backend directory:
+   ```bash
+   cd backend
+
+2. Create a virtual environment using Python 3.12:
+   ```bash
    py -3.12 -m venv venv
-2. you should see a new venv folder inside backend, then run<br>
+
+3. Activate the virtual environment:
+   ```bash
    .\venv\Scripts\Activate.ps1
-3. To run this file, please make sure that your python version is 3.12.x, check the version with<br>
+
+4. Verify your Python version (must be Python 3.12.x):
+   ```bash
    python --version
-4. Install the needed library<br>
+
+5. Upgrade pip and install required libraries:
+   ```bash
    python -m pip install --upgrade pip setuptools wheel
-   
    pip install fastapi uvicorn pydantic numpy opencv-python
-6. Check to see whether numpy and cv2 are installed successfully<br>
+
+6. Verify NumPy and OpenCV installation:
+   ```bash
    python -c "import numpy as np; import cv2; print('numpy', np.__version__); print('cv2', cv2.__version__)"
 
-7. Run this to start the backend<br>
+7. Start the backend server:
+   ```bash
    uvicorn server:app --reload --host 127.0.0.1 --port 8000
 
-8. Ctrl + click on the link to diret to browser or type "http://127.0.0.1:8000" at browser<br>
-   
-9. Open VS code and run "home.html" using live server.
+8. Open the backend in your browser:
+   http://127.0.0.1:8000
+
+## 🌐 Frontend Setup (HTML + JavaScript)
+
+Open the project in Visual Studio Code.
+
+Right-click home.html and select “Open with Live Server”.
+
+## ✅ Notes
+Make sure the backend server is running before opening the frontend.
+
+The venv folder should not be pushed to GitHub.
+
+This project is tested and intended to run on Python 3.12.x.
+
+## 📦 Tech Stack
+Frontend: HTML, CSS, JavaScript
+
+Backend: Python, FastAPI
+
+Image Processing: OpenCV, NumPy
+
