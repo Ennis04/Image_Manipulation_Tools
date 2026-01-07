@@ -60,3 +60,6 @@ Backend: Python, FastAPI
 
 Image Processing: OpenCV, NumPy
 
+## 📄 License
+
+This project is for educational purposes only.
